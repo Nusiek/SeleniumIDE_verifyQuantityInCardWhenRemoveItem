@@ -1,0 +1,529 @@
+{
+  "id": "1bc761ca-80df-459b-beb1-c2a469f0a692",
+  "version": "2.0",
+  "name": "project_7_FIN_verify_quantity_in_the_cart_when_removing_all_item_from_cart",
+  "url": "http://automationpractice.com/index.php?id_product=5&controller=product",
+  "tests": [{
+    "id": "79874141-3446-428e-a9cc-e98773def89c",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "cabb9938-6dbd-4fc2-a3aa-6d8899976223",
+    "name": "project_7_v6_FIN_verify_quantity_in_the_cart_when_removing_all_item_from_cart",
+    "commands": [{
+      "id": "73e038f3-68fe-4771-968e-5734d82ff4c8",
+      "comment": "",
+      "command": "//open",
+      "target": "http://automationpractice.com/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6c22ddc9-1220-42c4-a8d1-fa6dad2727f7",
+      "comment": "",
+      "command": "open",
+      "target": "http://automationpractice.com/index.php?id_product=6&controller=product#/color-yellow/size-l",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4ff12621-5b6c-44e1-974e-fd2efb15c909",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return []",
+      "targets": [],
+      "value": "arrayAddedItemsInCard"
+    }, {
+      "id": "328cc241-c3c6-41da-b5da-07baa4451d0c",
+      "comment": "",
+      "command": "executeScript",
+      "target": "var y = document.getElementsByTagName(\"dt\").length; return y;",
+      "targets": [],
+      "value": "arrayAddedItemsInCardLenght"
+    }, {
+      "id": "da095433-a711-47c0-98a9-d1c59936bfc6",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return []",
+      "targets": [],
+      "value": "arrayAddedItemsInCardQuantity"
+    }, {
+      "id": "9807b769-8994-4a99-bc7c-465c2d0935cf",
+      "comment": "",
+      "command": "store",
+      "target": "(empty)",
+      "targets": [],
+      "value": "varEmptyCart"
+    }, {
+      "id": "0171d250-887e-4b34-a11e-e5589ce07478",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9a1c8626-6670-4332-8474-cdab27b43854",
+      "comment": "beginning quantity of items in cart",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "95da1d8a-e14a-49ba-9188-6a53207f06e5",
+      "comment": "",
+      "command": "executeScript",
+      "target": "var x = document.getElementsByClassName(\"ajax_cart_quantity\")[0].innerHTML; return x;",
+      "targets": [],
+      "value": "varQuantityOfItemsInCart"
+    }, {
+      "id": "c2fb3132-7456-4a26-87c8-e05c11cc138a",
+      "comment": "",
+      "command": "//echo",
+      "target": "quantity in cart start: ${varQuantityOfItemsInCart}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c153dfd1-7e20-41d6-b808-4b9fdc4d48d3",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d0f412c9-919f-4706-9cc0-88931b1f8968",
+      "comment": "create array for \"data-id\"",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ec0825f0-c44e-439f-b3f2-7e2a39690066",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return -1",
+      "targets": [],
+      "value": "varNumberAddedItemInCart"
+    }, {
+      "id": "242e4d84-1618-4963-aa50-063b164f4e61",
+      "comment": "",
+      "command": "times",
+      "target": "${arrayAddedItemsInCardLenght}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7bbdd350-a651-4642-8421-e55fa2ac38e7",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9a81930a-66b8-42e2-a88f-fbea8315f9b9",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${varNumberAddedItemInCart}+1",
+      "targets": [],
+      "value": "varNumberAddedItemInCart"
+    }, {
+      "id": "8ad24d30-73d8-4105-abff-06460f1f97d9",
+      "comment": "",
+      "command": "//echo",
+      "target": "nubmer:   ${varNumberAddedItemInCart}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "28a5875e-d8ad-4831-8c89-696a4980fb8b",
+      "comment": "part for data-id",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2f465e18-5d96-42e1-926b-5425e82120e7",
+      "comment": "",
+      "command": "executeScript",
+      "target": "var x = document.getElementsByTagName(\"dt\")[${varNumberAddedItemInCart}].getAttribute(\"data-id\"); return x;",
+      "targets": [],
+      "value": "varReturnedDataIdAddedItemInCard"
+    }, {
+      "id": "989d3bc3-b1a4-4bfd-83d5-d82dc2768526",
+      "comment": "",
+      "command": "executeScript",
+      "target": "${arrayAddedItemsInCard}.push(${varReturnedDataIdAddedItemInCard}); return ${arrayAddedItemsInCard}",
+      "targets": [],
+      "value": "arrayAddedItemsInCard"
+    }, {
+      "id": "a6325b5d-d2ac-43b9-bb6c-9f7a10c1e700",
+      "comment": "",
+      "command": "//echo",
+      "target": "loop array:   ${arrayAddedItemsInCard}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7545e019-b135-4b23-ab68-d84533342a46",
+      "comment": "part for quantity",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eeeea80f-df69-4786-98f7-6db8a31b34be",
+      "comment": "",
+      "command": "executeScript",
+      "target": "var y = document.getElementsByTagName(\"dl\")[0].getElementsByClassName(\"quantity\")[${varNumberAddedItemInCart}].innerHTML; return y;",
+      "targets": [],
+      "value": "varQuantityForItem"
+    }, {
+      "id": "f9de03df-e3d9-4170-8685-a48b714bd6d8",
+      "comment": "",
+      "command": "//echo",
+      "target": "quantity for item: ${varQuantityForItem}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "824db5f6-6ed5-4387-ac81-49ec3b18713d",
+      "comment": "",
+      "command": "executeScript",
+      "target": "${arrayAddedItemsInCardQuantity}.push(${varQuantityForItem}); return ${arrayAddedItemsInCardQuantity};",
+      "targets": [],
+      "value": "arrayAddedItemsInCardQuantity"
+    }, {
+      "id": "944788ac-0e19-4cbe-8081-0275ab10f676",
+      "comment": "",
+      "command": "//echo",
+      "target": "array wuantity: ${arrayAddedItemsInCardQuantity}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "20d0369e-655b-4a76-b1de-ce3c330aadff",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7d95ddb6-eb94-4a16-b32d-8a0b6f7bd552",
+      "comment": "",
+      "command": "//echo",
+      "target": "cart:  ${arrayAddedItemsInCard}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a04062d6-d1bb-45bb-af3c-ef7cacb52711",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7d2cc65c-854e-4984-9e54-08c73f9aeacb",
+      "comment": "show drop down list with items",
+      "command": "mouseOver",
+      "target": "xpath=//div[@class=\"shopping_cart\"]/a[@title=\"View my shopping cart\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "69316e0b-a2f3-4416-a92a-664c7e450852",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fd989790-2e3d-45a2-93c1-ac5683b47ad9",
+      "comment": "",
+      "command": "//echo",
+      "target": "last: ${varNumberItemToRemove}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d0c6a5c5-c635-4f04-b270-9b196b32c5c6",
+      "comment": "",
+      "command": "//echo",
+      "target": "lenght array start: ${arrayAddedItemsInCardLenght}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "af7354a4-a296-4384-ab45-060f3132e122",
+      "comment": "remove all items by random",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b02967b0-3e11-4339-9b88-d1d0642eaa52",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return -1",
+      "targets": [],
+      "value": "varNumberItemToRemove"
+    }, {
+      "id": "7937d97c-b184-49c7-8ac5-71f5f1862380",
+      "comment": "",
+      "command": "times",
+      "target": "${arrayAddedItemsInCardLenght}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "59bc6064-a5d1-47c7-90c4-ba972baecb79",
+      "comment": "",
+      "command": "executeScript",
+      "target": "var y = document.getElementsByTagName(\"dt\").length-1; return y;",
+      "targets": [],
+      "value": "arrayAddedItemsInCardLenghtNew"
+    }, {
+      "id": "e3f32568-1376-4dd3-b7f1-07b0e820277f",
+      "comment": "",
+      "command": "//echo",
+      "target": "length after remove: ${arrayAddedItemsInCardLenghtNew}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "75863bf0-8770-4492-a6fa-fb00ddcb614d",
+      "comment": "",
+      "command": "executeScript",
+      "target": "var x = Math.floor(Math.random()*${arrayAddedItemsInCardLenghtNew}); return x",
+      "targets": [],
+      "value": "varRandomIndex "
+    }, {
+      "id": "58e8ffc9-0ce7-4cc2-a802-f7b2b53c692a",
+      "comment": "",
+      "command": "//echo",
+      "target": "index: ${varRandomIndex}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "abca8731-6b10-46e8-8f96-64b8f9638578",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "35056c40-7779-4722-89f2-3460068c1299",
+      "comment": "------------------------------------------------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "262e6078-421b-494b-8e2a-97b6b83f26d9",
+      "comment": "part for data-id",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "971c5302-32e4-4475-a465-8168c9c5d7e4",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return[${arrayAddedItemsInCard}[${varRandomIndex}]]",
+      "targets": [],
+      "value": "varItemIdToRemove"
+    }, {
+      "id": "53ed7549-7378-4ae5-a42c-d2423c323daf",
+      "comment": "",
+      "command": "//echo",
+      "target": "id to remove: ${varItemIdToRemove}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e6c6ef4e-901d-40ac-a6c9-15b9c1d55b58",
+      "comment": "",
+      "command": "executeScript",
+      "target": "${arrayAddedItemsInCard}.splice(${varRandomIndex},1); return ${arrayAddedItemsInCard}",
+      "targets": [],
+      "value": "arrayAddedItemsInCard"
+    }, {
+      "id": "93a2af06-2acb-4ade-9e8d-438c37853066",
+      "comment": "",
+      "command": "//echo",
+      "target": "Item in Card - remove: ${arrayAddedItemsInCard}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d2f4d065-0785-4730-89e3-99af8deea5cd",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4a2dfb7a-2653-4727-a116-91dc26850dc6",
+      "comment": "------------------------------------------------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd672c25-40e9-442b-a33e-8cb984a220a2",
+      "comment": "",
+      "command": "echo",
+      "target": "part for quanitty ---------------------------",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "096e18ce-981a-4fa2-be86-b711f4418b14",
+      "comment": "part for quantity",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0648a6ef-32f6-4de1-8915-4ee5de7f208d",
+      "comment": "",
+      "command": "//echo",
+      "target": "quantity array b: ${arrayAddedItemsInCardQuantity}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "07ca3077-d8d4-4fe0-85a1-060667e88455",
+      "comment": "",
+      "command": "//echo",
+      "target": "index: ${varRandomIndex}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "84f1b566-df0c-4063-b52c-142516584e69",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return [${arrayAddedItemsInCardQuantity}[${varRandomIndex}]]",
+      "targets": [],
+      "value": "varQuantityToRemove"
+    }, {
+      "id": "be7295a5-8782-4668-9ef3-489bc4ba824b",
+      "comment": "",
+      "command": "//echo",
+      "target": "quantity to remove: ${varQuantityToRemove}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b7f8c5ab-a96f-44c5-98ea-105107c635b4",
+      "comment": "",
+      "command": "executeScript",
+      "target": "${arrayAddedItemsInCardQuantity}.splice(${varRandomIndex},1); return ${arrayAddedItemsInCardQuantity}",
+      "targets": [],
+      "value": "arrayAddedItemsInCardQuantity"
+    }, {
+      "id": "b6cf467e-6fe6-4c3a-bd05-4e8ccd746bdf",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2af24c99-5465-4a76-9ebd-f43abf5fb32a",
+      "comment": "remove item for cart",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "31ab5a8b-9c0b-4025-b5c9-54b44e88ef55",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//dt[@data-id=\"${varItemIdToRemove}\"]/span[@class=\"remove_link\"]/a[contains(text(),\"\")]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d7c0b8ce-1824-49d8-bf0a-f64b8dc41d27",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c953f019-366d-4fad-a1c8-db488a8f98b0",
+      "comment": "",
+      "command": "executeScript",
+      "target": "var x = ${varQuantityOfItemsInCart}-${varQuantityToRemove}; return x;",
+      "targets": [],
+      "value": "varQuantityOfItemsInCart"
+    }, {
+      "id": "104b48ba-1539-4c3a-9521-4f071803ed96",
+      "comment": "",
+      "command": "//echo",
+      "target": "quantity in cart: ${varQuantityOfItemsInCart}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "500e8174-7a46-4ab7-bae7-ff3dd02690a3",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bac04765-a125-4dda-9573-f090a68a437b",
+      "comment": "",
+      "command": "if",
+      "target": "${varQuantityOfItemsInCart} >0",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "570e7864-0b7e-49b8-9c43-4931aa763371",
+      "comment": "",
+      "command": "verifyText",
+      "target": "xpath=//div[@class=\"shopping_cart\"]/a/span[@class=\"ajax_cart_quantity\"]",
+      "targets": [],
+      "value": "${varQuantityOfItemsInCart}"
+    }, {
+      "id": "13932563-7cbd-4759-9818-fd57c7f97719",
+      "comment": "",
+      "command": "//verifyText",
+      "target": "css=span.ajax_cart_no_product",
+      "targets": [],
+      "value": "${varEmptyCart}"
+    }, {
+      "id": "779c8412-bb96-4431-8f6d-96ad51d54ca2",
+      "comment": "",
+      "command": "else",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5bfcc984-f833-47ef-81cc-136435bbb9ea",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=span.ajax_cart_no_product",
+      "targets": [],
+      "value": "${varEmptyCart}"
+    }, {
+      "id": "f0e8d456-08d1-4625-b1a4-dd385b77471f",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "054b369f-b77d-4dcb-bb3d-6cdfa23d4158",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "46ca383a-0cbf-4a07-a162-0e3d1e510586",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e41e5ed5-fae6-4377-80ec-df8570db8c03",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=span.ajax_cart_no_product",
+      "targets": [],
+      "value": "${varEmptyCart}"
+    }]
+  }],
+  "suites": [{
+    "id": "b634a58c-bcd7-4b9d-8fca-7eae2a927367",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["79874141-3446-428e-a9cc-e98773def89c"]
+  }],
+  "urls": ["http://automationpractice.com/index.php?id_product=5&controller=product"],
+  "plugins": []
+}
